@@ -1,0 +1,48 @@
+{
+    "meta": {
+        "code": 201
+    },
+    "data": {
+        "tracking": {
+            "id": "546c348ab212cfa86bf73788",
+            "created_at": "2014-11-19T06:11:22+00:00",
+            "updated_at": "2014-11-19T06:11:22+00:00",
+            "tracking_number": "69240582475SE",
+            "tracking_account_number": null,
+            "tracking_postal_code": null,
+            "tracking_ship_date": null,
+            "slug": "postnord",
+            "active": true,
+            "android": [],
+            "custom_fields": {
+                "product_price": "USD19.99",
+                "product_name": "iPhone Case"
+            },
+            "customer_name": null,
+            "delivery_time": 0,
+            "destination_country_iso3": null,
+            "emails": [
+                "email@yourdomain.com",
+                "another_email@yourdomain.com"
+            ],
+            "expected_delivery": null,
+            "ios": [],
+            "note": null,
+            "order_id": "ID 1234",
+            "order_id_path": "http://www.aftership.com/order_id=1234",
+            "origin_country_iso3": null,
+            "shipment_package_count": 0,
+            "shipment_type": null,
+            "shipment_weight": 0,
+            "shipment_weight_unit": "",
+            "signed_by": null,
+            "smses": [],
+            "source": "api",
+            "tag": "Pending",
+            "title": "Title Name",
+            "tracked_count": 0,
+            "unique_token": "Wy8lRF1nU",
+            "checkpoints": []
+        }
+    }
+}
