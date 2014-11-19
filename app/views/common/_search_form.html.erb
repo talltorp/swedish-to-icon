@@ -1,0 +1,5 @@
+<%= form_tag("/icons", method: "get") do %>
+  <%= label_tag(:word, "Swedish word:") %>
+  <%= text_field_tag(:word, params["word"]) %>
+  <%= submit_tag("Search") %>
+<% end %>

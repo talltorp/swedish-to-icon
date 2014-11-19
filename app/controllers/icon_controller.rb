@@ -1,13 +1,16 @@
 require 'rest-client'
 
 class IconController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
 
   def list
     begin
-      icons = list_of_icons_for swedish_word_translated_into_english
+      @icons = list_of_icons_for swedish_word_translated_into_english
 
-      render json: {s: icons}.to_json, status: :ok
+      respond_to do |format|
+        format.html
+        format.json { render json: @icons }
+      end
     rescue => e
       p e
       return_unavailable_status
@@ -22,6 +25,7 @@ class IconController < ApplicationController
   def swedish_word_translated_into_english
     response = RestClient.get google_translate_url
     json = JSON.parse(response)
+    p json
     json["data"]["translations"][0]["translatedText"]
   end
 
@@ -37,6 +41,7 @@ class IconController < ApplicationController
       icon["raster_sizes"].each do | raster_size |
         if (raster_size["size"] >= 64)
           list << raster_size["formats"][0]["preview_url"]
+          break
         end
       end
     end
@@ -44,7 +49,7 @@ class IconController < ApplicationController
   end
 
   def icon_search_url(english_word)
-    "https://api.iconfinder.com/v2/icons/search?query=#{english_word}&count=30&premium=false&license=commercial-nonattribution&minimum_size=64"
+    "https://api.iconfinder.com/v2/icons/search?query=#{CGI::escape(english_word)}&count=30&premium=false&license=commercial-nonattribution&minimum_size=64"
   end
 
   def return_unavailable_status

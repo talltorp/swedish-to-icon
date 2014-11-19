@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  post '/' => 'icon#list'
+  get '/icons' => 'icon#list'
+  post '/icons' => 'icon#list'
+  get '/' => 'main#search'
 end
