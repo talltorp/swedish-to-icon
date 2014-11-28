@@ -168,6 +168,9 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
@@ -206,5 +209,6 @@ DEPENDENCIES
   shoulda-matchers
   spring
   turbolinks
+  uglifier
   unicorn
   webmock (= 1.18.0)
