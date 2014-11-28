@@ -7,6 +7,15 @@ gem 'dalli'
 gem 'rest-client'
 gem 'oauth'
 
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+gem 'refills'
+gem 'sass'
+
+gem 'jquery-rails'
+gem 'turbolinks'
+
 gem 'jbuilder', '~> 2.0'
 gem 'rails_12factor', group: :production
 

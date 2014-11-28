@@ -1,6 +1,12 @@
-<%= render "common/search_form"%>
-<ul>
-  <% @icons.each do |icon| %>
-    <%= image_tag icon, size: "64" %>
-  <% end %>
-</ul>
+<div class="container">
+  <section >
+    <%= render "common/search_form"%>
+  </section>
+  <section>
+    <ul>
+      <% @icons.each do |icon| %>
+        <%= image_tag icon, size: "64" %>
+      <% end %>
+    </ul>
+  </section>
+</div>
