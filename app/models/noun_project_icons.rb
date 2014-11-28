@@ -10,6 +10,7 @@ class NounProjectIcons
     consumer = OAuth::Consumer.new(@key, @secret)
     access_token = OAuth::AccessToken.new consumer
 
+    p icon_search_url(english_word)
     response = access_token.get(icon_search_url(english_word))
     json = JSON.parse(response.body)
     list = []
@@ -22,6 +23,6 @@ class NounProjectIcons
   private
 
   def icon_search_url(english_word)
-    "http://api.thenounproject.com/icons/#{english_word}"
+    "http://api.thenounproject.com/icons/#{URI::encode(english_word)}"
   end
 end
