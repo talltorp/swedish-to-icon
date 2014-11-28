@@ -34,22 +34,11 @@ class IconController < ApplicationController
   end
 
   def list_of_icons_for(english_word)
-    response = RestClient.get icon_search_url(english_word)
-    json = JSON.parse(response)
-    list = []
-    json["icons"].each do | icon |
-      icon["raster_sizes"].each do | raster_size |
-        if (raster_size["size"] >= 64)
-          list << raster_size["formats"][0]["preview_url"]
-          break
-        end
-      end
-    end
-    list
+    NounProjectIcons.new.search_for(english_word)
   end
 
   def icon_search_url(english_word)
-    "https://api.iconfinder.com/v2/icons/search?query=#{CGI::escape(english_word)}&count=30&premium=false&license=commercial-nonattribution&minimum_size=64"
+    "http://api.thenounproject.com/icons/#{english_word}"
   end
 
   def return_unavailable_status

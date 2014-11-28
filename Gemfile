@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 gem 'pg'
 gem 'unicorn'
 gem 'dalli'
 gem 'rest-client'
+gem 'oauth'
 
 gem 'jbuilder', '~> 2.0'
 gem 'rails_12factor', group: :production
@@ -31,16 +30,4 @@ group :test, :development do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'dotenv-rails'
-  # gem 'byebug'
-  # gem 'pry-rails'
-  # gem 'pry-remote'
-  # gem 'pry-stack_explorer'
-  # gem 'pry-byebug'
-  # gem 'awesome_print'
 end
-
-
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
