@@ -18,7 +18,8 @@
 @import "neat";
 @import "refills/search-bar";
 @import "refills/icon-bullet-points";
-@import "refills/comment";
+@import "refills/hero";
+@import "refills/navigation";
 
 div.container {
   @include outer-container;
@@ -27,4 +28,14 @@ div.container {
 section {
   @include pad();
   text-align: center;
+}
+
+.example {
+  @include pad();
+
+  img {
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid silver;
+  }
 }

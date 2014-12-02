@@ -1,16 +1,16 @@
 .hero {
-	$hero-background: desaturate(darken($base-accent-color, 20), 30);	
+	$hero-background: #5AB4D5;
 	$hero-color: white;
 
-	background: url(https://raw.github.com/Magnus-G/Random/master/lake-transparent.png);
-	background-color: $hero-background;
+	//background: url(/assets/header-snails.png);
+	//background-color: $hero-background;
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
 	padding-bottom: 4em;
 
 	.hero-logo img {
-		height: 3em;
+		height: 20em;
 		margin-bottom: 1em;
 	}
 
@@ -30,7 +30,7 @@
 
 		.hero-copy {
 			text-align: center;
-			
+
 			h1 {
 				font-size: 1.4em;
 				margin-bottom: .2em;
@@ -42,7 +42,7 @@
 
 			p {
 				margin: auto;
-				margin-bottom: 3em;	
+				margin-bottom: 3em;
 				font-weight: 200;
 
 				@include media($large-screen) {
