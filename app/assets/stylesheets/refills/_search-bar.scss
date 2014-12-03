@@ -5,7 +5,15 @@
 
   position: relative;
   display: inline-block;
-  width: 400px;
+  width: 200px;
+
+  @include media($medium-screen) {
+    width: 400px;
+  }
+
+  @include media($large-screen) {
+    width: 400px;
+  }
 
   input {
     @include box-sizing(border-box);

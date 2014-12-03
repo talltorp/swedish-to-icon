@@ -10,7 +10,16 @@
 	padding-bottom: 4em;
 
 	.hero-logo img {
-		height: 20em;
+		height: 12em;
+
+		@include media($medium-screen) {
+	    height: 20em;
+	  }
+
+	  @include media($large-screen) {
+	    height: 20em;
+	  }
+
 		margin-bottom: 1em;
 	}
 
