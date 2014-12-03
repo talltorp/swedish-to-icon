@@ -5,7 +5,13 @@ class IconController < ApplicationController
 
   def list
     begin
-      @icons = list_of_icons_for swedish_word_translated_into_english
+      @word = swedish_word
+      @english_word = swedish_word_translated_into_english
+      begin
+        @icons = list_of_icons_for @english_word
+      rescue => e
+        @icons = []
+      end
 
       respond_to do |format|
         format.html
@@ -25,7 +31,7 @@ class IconController < ApplicationController
   def swedish_word_translated_into_english
     response = RestClient.get google_translate_url
     json = JSON.parse(response)
-    p json
+    p json["data"]["translations"]
     json["data"]["translations"][0]["translatedText"]
   end
 

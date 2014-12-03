@@ -1,6 +1,12 @@
 <%= render "refills/navigation"%>
 <div class="container">
   <section>
+    <% if @icons.length <= 0 %>
+      <p class="not-found-message">Tyvärr hittade vi inte någon översättning</p>
+      <p class="translated-word">
+        &quot;<%= @english_word %>&quot;
+      </p>
+    <% end %>
     <ul>
       <% @icons.each do |icon| %>
         <%= image_tag icon, size: "64" %>
